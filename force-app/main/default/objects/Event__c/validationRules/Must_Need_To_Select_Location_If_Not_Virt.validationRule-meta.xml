@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Need_To_Select_Location_If_Not_Virt</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   TEXT(Event__c) = &apos;Virtual&apos;,
+   NOT(ISBLANK(Location__c))
+)</errorConditionFormula>
+    <errorDisplayField>Location__c</errorDisplayField>
+    <errorMessage>You can select the location if the event is Virtual</errorMessage>
+</ValidationRule>
